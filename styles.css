@@ -1,34 +1,182 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const heroButtons = document.querySelectorAll('.cta-buttons .btn');
+/* General Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    color: #333;
+}
 
-    heroButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const target = e.target.getAttribute('data-target');
-            if (target) {
-                const targetSection = document.querySelector(target);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
+body {
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
 
-    const navLinks = document.querySelectorAll('.nav a');
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = e.target.getAttribute('href');
-            const targetSection = document.querySelector(target);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+/* Header Styles */
+.header {
+    background: linear-gradient(90deg, #d1c4e9, #b3e5fc);
+    padding: 1rem 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #673ab7;
+}
+
+.nav {
+    text-align: right;
+}
+
+.nav a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #673ab7;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #f8bbd0, #e1bee7);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons .btn {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: #673ab7;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #5e35b1;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #0288d1;
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    padding: 2rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #673ab7;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Features Section */
+.features {
+    padding: 2rem 0;
+    background: #ede7f6;
+}
+
+.features h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #673ab7;
+    margin-bottom: 1.5rem;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.feature-card {
+    flex: 1 1 calc(33.333% - 1rem);
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #673ab7;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    background: #673ab7;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a {
+    color: white;
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #e1bee7;
+}
